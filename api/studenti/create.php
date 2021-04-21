@@ -23,7 +23,6 @@
 		$obj->name = $data->name;
 		$obj->surname = $data->surname;
 		$obj->sidi_code = $data->sidi_code;
-		$obj->email = $data->email;
 		$obj->tax_code = $data->tax_code;
 
 		if($obj->create()) {

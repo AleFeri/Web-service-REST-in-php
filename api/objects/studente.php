@@ -86,6 +86,15 @@
 		// delete
 		function delete() {
 			// delete query
+			$query = "DELETE FROM student_class WHERE id_student = ?";
+
+			$stmt = $this->conn->prepare($query);
+			$this->id=htmlspecialchars(strip_tags($this->id));
+			$stmt->bindParam(1, $this->id);
+
+			if(!$stmt->execute())
+				return false;
+
 			$query = "DELETE FROM " . $this->table . " WHERE id = ?";
 
 			$stmt = $this->conn->prepare($query);
